@@ -1,0 +1,293 @@
+:root {
+  --bg: #0b1220;
+  --card: rgba(255, 255, 255, 0.08);
+  --card2: rgba(255, 255, 255, 0.06);
+  --text: rgba(255, 255, 255, 0.92);
+  --muted: rgba(255, 255, 255, 0.68);
+  --border: rgba(255, 255, 255, 0.14);
+  --shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
+  --accent: #7c5cff;
+  --accent2: #2dd4bf;
+  --danger: #fb7185;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.AppShell {
+  min-height: 100vh;
+  background:
+    radial-gradient(1000px 600px at 15% 10%, rgba(124, 92, 255, 0.30), transparent 55%),
+    radial-gradient(900px 500px at 85% 15%, rgba(45, 212, 191, 0.25), transparent 55%),
+    radial-gradient(800px 600px at 50% 90%, rgba(59, 130, 246, 0.12), transparent 60%),
+    var(--bg);
+  color: var(--text);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 28px 16px;
+}
+
+.Container {
+  width: 100%;
+  max-width: 760px;
+}
+
+.Card {
+  background: linear-gradient(180deg, var(--card), var(--card2));
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+
+.Card-header {
+  padding: 22px 22px 10px 22px;
+}
+
+.Title {
+  font-weight: 700;
+  font-size: 22px;
+  letter-spacing: 0.2px;
+}
+
+.Subtitle {
+  margin-top: 6px;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.Tabs {
+  display: flex;
+  gap: 8px;
+  padding: 0 14px 12px 14px;
+}
+
+.Tab {
+  flex: 1;
+  padding: 10px 12px;
+  border-radius: 12px;
+  border: 1px solid transparent;
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--text);
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.Tab--active {
+  background: rgba(124, 92, 255, 0.20);
+  border-color: rgba(124, 92, 255, 0.35);
+}
+
+.Form {
+  padding: 14px 22px 22px 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.Field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.Field-label {
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.Field-input {
+  width: 100%;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: rgba(0, 0, 0, 0.22);
+  color: var(--text);
+  padding: 10px 12px;
+  border-radius: 12px;
+  outline: none;
+}
+
+.Field-input::placeholder {
+  color: rgba(255, 255, 255, 0.42);
+}
+
+.Field-input:focus {
+  border-color: rgba(124, 92, 255, 0.55);
+  box-shadow: 0 0 0 4px rgba(124, 92, 255, 0.15);
+}
+
+.Field-textarea {
+  resize: vertical;
+  min-height: 88px;
+}
+
+.Actions {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: flex-end;
+  margin-top: 4px;
+}
+
+.Button {
+  border: 1px solid transparent;
+  border-radius: 12px;
+  padding: 10px 14px;
+  cursor: pointer;
+  font-weight: 700;
+  color: var(--text);
+  background: rgba(255, 255, 255, 0.10);
+}
+
+.Button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.Button--primary {
+  background: linear-gradient(90deg, rgba(124, 92, 255, 0.95), rgba(45, 212, 191, 0.85));
+  border-color: rgba(255, 255, 255, 0.12);
+}
+
+.Button--secondary {
+  background: rgba(255, 255, 255, 0.10);
+  border-color: rgba(255, 255, 255, 0.16);
+}
+
+.Button--ghost {
+  background: transparent;
+  border-color: rgba(255, 255, 255, 0.16);
+}
+
+.Alert {
+  border-radius: 12px;
+  padding: 10px 12px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: rgba(255, 255, 255, 0.06);
+  font-size: 14px;
+}
+
+.Alert--error {
+  border-color: rgba(251, 113, 133, 0.40);
+  background: rgba(251, 113, 133, 0.12);
+}
+
+.Alert--info {
+  border-color: rgba(45, 212, 191, 0.35);
+  background: rgba(45, 212, 191, 0.10);
+}
+
+.Hint {
+  margin-top: 4px;
+  color: var(--muted);
+  font-size: 13px;
+  text-align: center;
+}
+
+.Link {
+  color: rgba(169, 150, 255, 0.95);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-weight: 700;
+  padding: 0;
+}
+
+.Topbar {
+  padding: 22px;
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.10);
+}
+
+.Topbar-actions {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.Grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 14px;
+  padding: 14px;
+}
+
+.Section {
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  background: rgba(0, 0, 0, 0.14);
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.Section-title {
+  padding: 14px 16px;
+  font-weight: 800;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.10);
+}
+
+.Meta {
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.List {
+  padding: 0 16px 16px 16px;
+}
+
+.Empty {
+  color: var(--muted);
+  font-size: 14px;
+  padding: 10px 0 0 0;
+}
+
+.ListItem {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 12px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.10);
+}
+
+.ListItem:last-child {
+  border-bottom: none;
+}
+
+.ListItem-main {
+  min-width: 0;
+}
+
+.ListItem-text {
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+.ListItem-meta {
+  margin-top: 6px;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.IconButton {
+  align-self: flex-start;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--text);
+  border-radius: 12px;
+  padding: 8px 10px;
+  cursor: pointer;
+}
+
+.IconButton:hover {
+  border-color: rgba(251, 113, 133, 0.35);
+}
+
+.Mono {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono',
+    'Courier New', monospace;
+}
+
